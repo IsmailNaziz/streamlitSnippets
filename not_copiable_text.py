@@ -8,29 +8,28 @@ It supports:
 - Multiple lines
 - Special characters: @, #, $, %, &, *
 - Indentations and formatting.
-
-This is a new paragraph with proper line spacing.
 """
 
-# HTML and CSS for non-copiable text
+# HTML and CSS for non-copiable text with adjustable font size
+font_size = "20px"  # You can change this to any desired size
+
 non_copiable_html = f"""
-<style>
-    .non-copiable {{
-        user-select: none; 
-        -webkit-user-select: none; 
-        -moz-user-select: none; 
-        -ms-user-select: none; 
-        white-space: pre-wrap; 
-        word-wrap: break-word; 
-        font-family: inherit; /* Matches Streamlit's default font */
-        font-size: inherit; /* Matches Streamlit's font size */
-        line-height: inherit; /* Matches Streamlit's default line spacing */
-        padding: 0; 
-        margin: 0; 
-        color: inherit; /* Matches Streamlit's text color */
-    }}
-</style>
-<div class="non-copiable">
+<div style="
+    user-select: none; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    font-family: Arial, sans-serif; 
+    font-size: {font_size}; 
+    line-height: 1.5; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    background-color: #f9f9f9; 
+    color: #333; 
+">
 {non_copiable_text}
 </div>
 """
